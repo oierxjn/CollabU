@@ -1,7 +1,7 @@
 # CollabU - 学生团队协作与项目管理系统
 
 <p align="center">
-  <img src="https://via.placeholder.com/800x400.png?text=CollabU+Banner" alt="CollabU Banner" width="100%">
+  <img src="./collabu_icon.png" alt="CollabU Logo" width="200">
 </p>
 
 <p align="center">
@@ -15,6 +15,7 @@
 
 ---
 
+<span id="项目介绍"></span>
 ## 📖 项目介绍
 
 **CollabU** 是一个专为学生团队设计的协作与项目管理平台。与传统的垂直管理工具不同，CollabU 采用**扁平化、民主化**的协作模式，旨在打破层级壁垒，激发团队成员的主动性和创造力。
@@ -27,6 +28,7 @@
 
 ---
 
+<span id="核心功能"></span>
 ## ✨ 核心功能
 
 - **👥 扁平化团队管理**: 所有成员权限平等，均可邀请成员、创建项目、管理任务。
@@ -42,6 +44,7 @@
 
 ---
 
+<span id="技术栈"></span>
 ## 🛠 技术栈
 
 ### Backend (后端)
@@ -68,27 +71,29 @@
 
 ---
 
+<span id="系统架构"></span>
 ## 🏗 系统架构
 
 ```mermaid
 graph TD
-    User[用户 (Web/Mobile)] -->|HTTP/REST| Nginx[反向代理/网关]
+    User["用户 (Web/Mobile)"] -->|HTTP/REST| Nginx["反向代理/网关"]
     User -->|WebSocket| Nginx
     
     subgraph "Backend Server"
-        Nginx --> Flask[Flask API Server]
-        Flask -->|ORM| DB[(Database)]
-        Flask -->|SocketIO| Redis[(Redis - Optional)]
+        Nginx --> Flask["Flask API Server"]
+        Flask -->|ORM| DB[("Database")]
+        Flask -->|SocketIO| Redis[("Redis - Optional")]
     end
     
     subgraph "Clients"
-        Web[Web Client (Vue3)]
-        App[Mobile App (Flutter)]
+        Web["Web Client (Vue3)"]
+        App["Mobile App (Flutter)"]
     end
 ```
 
 ---
 
+<span id="快速开始"></span>
 ## 🚀 快速开始
 
 ### 环境依赖
@@ -171,6 +176,7 @@ CollabU/
 
 ---
 
+<span id="贡献指南"></span>
 ## 🤝 贡献指南
 
 欢迎提交 Issue 和 Pull Request！
