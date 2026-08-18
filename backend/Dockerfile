@@ -14,6 +14,9 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
+# 安装 curl 用于容器健康检查（python:3.11-slim 默认不含 curl）
+RUN apt-get update && apt-get install -y --no-install-recommends curl && rm -rf /var/lib/apt/lists/*
+
 # 复制后端源码
 COPY . .
 
