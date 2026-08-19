@@ -27,4 +27,4 @@ EXPOSE 5000
 
 # 启动时先执行数据库迁移建表，再以 eventlet worker 启动 Gunicorn。
 # eventlet 与 Flask-SocketIO 配合以支持 WebSocket 实时功能。
-CMD ["sh", "-c", "flask db upgrade && gunicorn --worker-class eventlet --workers 1 --bind 0.0.0.0:5000 'app:create_app()'"]
+CMD ["sh", "-c", "flask db upgrade && gunicorn --worker-class gunicorn.workers.geventlet.EventletWorker --workers 1 --bind 0.0.0.0:5000 'app:create_app()'"]

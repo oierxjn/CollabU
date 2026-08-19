@@ -7,4 +7,4 @@ Flask-Cors
 python-dotenv
 pymysql
 eventlet
-gunicorn
+gunicorn==23.0.0
